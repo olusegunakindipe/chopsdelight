@@ -1,17 +1,17 @@
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
 import schemas from './schemas/schema'
+
 import {siteStructure} from './structure/deskStructure'
+import {visionTool} from '@sanity/vision'
+
 export default defineConfig({
-  name: 'Chops-delight',
-  title: 'ChopsDelight',
-  projectId: '8clsqhci',
+  title: 'chopsdelight',
+  name: 'chopsdelight',
   dataset: 'production',
-  structure: siteStructure,
+  projectId: '8clsqhci',
 
-  plugins: [deskTool({structure: siteStructure}), visionTool()],
-
+  plugins: [deskTool({structure: siteStructure})],
   schema: {
     types: schemas,
   },

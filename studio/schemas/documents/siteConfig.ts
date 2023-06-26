@@ -25,11 +25,12 @@ const schema = {
       name: 'logo',
       type: 'imageAsset',
     },
-    // {
-    //   title: 'Header Items',
-    //   name: 'headerNavigation',
-    //   type: 'array',
-    // },
+    {
+      title: 'Landing pages',
+      name: 'headerNavigation',
+      type: 'array',
+      of: [{type: 'landingpageItems'}],
+    },
   ],
 }
 
