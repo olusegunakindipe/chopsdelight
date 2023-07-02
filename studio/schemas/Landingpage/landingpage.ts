@@ -18,6 +18,17 @@ const schema = {
       },
       validation: (Rule: any) => Rule.optional(),
     },
+    {
+      name: 'menuItems',
+      title: 'Menu Items',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'foodCategory'}],
+        },
+      ],
+    },
   ],
   preview: {
     select: {
