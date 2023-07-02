@@ -6,6 +6,9 @@
   .toggle-menu-button {
     @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent;
   }
+  //   .toggle-mobile-card {
+  //     @apply [&>div::after]:translate-y-0 [&>div::after]:-rotate-45;
+  //   }
 }
 
 * {
@@ -16,5 +19,14 @@
 
 body {
   background-color: "#ffffff";
-  color: #313131;
+  color: #333;
+  font-family: "Barlow Condensed, Arial, sans-serif";
+  font-size: 1.25rem;
+  list-style: 1.2;
+}
+.toggle-mobile-card {
+  &::after {
+    transform: translate(10%, -40%) rotate(-90deg) !important;
+    background-color: transparent !important;
+  }
 }

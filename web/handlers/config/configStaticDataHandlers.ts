@@ -5,6 +5,18 @@ export class ConfigStaticDataHandlers {
   static async GetLayoutConfig() {
     const query = groq`*[_type=="site-config"]{
         ...,
+        headerNavigation[]{
+            title,
+            landingpage->{
+                menuItems[]->{
+                    title,
+                    "slug" : slug.current,
+                    links
+                },
+              title,
+              "slug":slug.current,
+            }
+          },
         caption,
         logo{
             asset{

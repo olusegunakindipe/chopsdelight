@@ -1,21 +1,34 @@
 export interface ILayoutConfig {
   title: string;
   logo: IAsset;
-  headerNavigation?: IHeaderNavigation;
+  headerNavigation?: IHeaderNavigation[];
   footerNavigation?: IFooterNavigation;
   footerLogo?: IAsset;
   activeMenuItem?: string;
 }
 
 export interface IHeaderNavigation {
-  slug?: string;
   title: string;
-  SubmenuItems?: ISubmenuItems;
+  landingpage?: ILandinpage;
 }
 
 export interface IFooterNavigation {}
 
-export interface ISubmenuItems {}
+export interface ILandinpage {
+  menuItems: IMenuItem[];
+}
+export interface IMenuItem {
+  links: ILink[];
+  title: string;
+  slug: string;
+}
+
+export interface ILink {
+  _key: string;
+  title: string;
+  externalLink: string;
+  _type: string;
+}
 
 export interface IAsset {
   _type: string;

@@ -12,7 +12,6 @@ export class FrontPageStaticDataHandlers {
         FrontPageQueries.GetFrontpage(),
         ConfigStaticDataHandlers.GetLayoutConfig(),
       ]);
-
       frontpageResult = getSanityResult;
       configResult = getLayoutConfigResult;
       frontPageStaticProps.frontpage = frontpageResult;

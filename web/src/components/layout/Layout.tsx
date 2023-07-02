@@ -20,7 +20,7 @@ function Layout({ children, config, logo }: Props) {
         />
       </Head>
       <Header logo={logo} layout={config} />
-      <main className="relative min-h-[40vh]" id="main">
+      <main className="relative md:min-h-[40vh]" id="main">
         {children}
       </main>
       <Footer />
