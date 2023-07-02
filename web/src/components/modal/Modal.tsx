@@ -5,8 +5,8 @@ interface Props extends PropsWithChildren {
 }
 const Modal = ({ onClose, children }: Props) => {
   return (
-    <div className="fixed inset-[10.25rem]">
-      <div className="bg-slate-100 py-8 px-4">
+    <div className="fixed inset-48 mt-1 md:min-w-fit">
+      <div className="bg-slate-100 p-4 w-min md:w-full">
         <div className="absolute right-4 z-50 cursor-pointer" onClick={onClose}>
           <svg
             className="h-8 w-8 text-black font-700"

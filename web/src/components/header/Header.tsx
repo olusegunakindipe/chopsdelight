@@ -30,23 +30,25 @@ function Header({ layout, logo }: Props) {
   return (
     <header className="relative">
       <div className="bg-white shadow-md absolute z-10 w-full lg:h-32">
-        <div className="flex justify-between items-center px-8 lg:px-16">
-          <Image
-            src={`${logo?.asset.asset.url}`}
-            alt="logo"
-            width={100}
-            height={20}
-            priority
-            className="cursor-pointer xl:ml-40"
-          />
-          <div className="flex items-center gap-4">
+        <div className="grid grid-cols-[2fr,1fr] gap-4 justify-between items-center md:py-4 px-8 md:px-16">
+          <div className="w-full">
+            <Image
+              src={`${logo?.asset.asset.url}`}
+              alt="logo"
+              width={100}
+              height={20}
+              priority
+              className="cursor-pointer xl:ml-40"
+            />
+          </div>
+          <div className="flex items-center gap-4 justify-end">
             <div className="flex relative items-center">
               <input
                 placeholder="Search ..."
-                className="cursor-pointer pl-4 py-2 rounded-2xl relative border border-1 border-black"
+                className="cursor-pointer pl-2 py-2 rounded-2xl relative border border-1 border-black md:w-full w-44"
               />
               <svg
-                className="absolute right-2 cursor-pointer"
+                className="absolute right-2 cursor-pointer w-6 h-6 sm:w-8 sm:h-8"
                 id="Layer_1"
                 version="1.1"
                 viewBox="0 0 512 512"
@@ -62,7 +64,7 @@ function Header({ layout, logo }: Props) {
             <div className="md:hidden">
               <button
                 ref={hamburgerRef}
-                className="relative flex items-center justify-center w-8 h-8 rounded-md cursor-pointer"
+                className="relative flex items-center justify-center w-8 h-8 rounded-md cursor-pointer sm:-mr-2"
                 onClick={handleHamburgerMenu}
               >
                 <div
