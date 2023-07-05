@@ -11,6 +11,9 @@ module.exports = {
       colors: {
         black: "#000000",
       },
+      fontFamily: {
+        sans: ["Barlow Condensed", "Arial", "sans-serif"],
+      },
     },
   },
   plugins: [],

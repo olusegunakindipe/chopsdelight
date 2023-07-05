@@ -5,7 +5,7 @@ interface Props extends PropsWithChildren {
 }
 const Modal = ({ onClose, children }: Props) => {
   return (
-    <div className="fixed inset-48 mt-1 md:min-w-fit">
+    <div className="fixed min-w-[70%] top-14 z-50 ">
       <div className="bg-slate-100 p-4 w-min md:w-full">
         <div className="absolute right-4 z-50 cursor-pointer" onClick={onClose}>
           <svg

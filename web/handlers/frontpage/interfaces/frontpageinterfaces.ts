@@ -1,10 +1,11 @@
 import { IAsset } from "@/interfaces/layoutInterfaces";
 
 export interface IFrontpage {
-  content: IFrontpageContent;
+  banner: IBanner;
   title: string;
 }
 
-export interface IFrontpageContent {
+export interface IBanner {
   image: IAsset;
+  _type?: string;
 }

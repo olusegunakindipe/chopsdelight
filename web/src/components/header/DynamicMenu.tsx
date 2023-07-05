@@ -8,13 +8,13 @@ function DynmaicMobileMenu({ data }: Props) {
   return (
     <div className="md:flex md:relative md:gap-12 md:pt-8">
       {data?.menuItems?.map((item, i) => (
-        <div key={i} className="px-4 mb-4 border-l-4 border-[#297fca]">
+        <div key={i} className="px-4 mb-4 border-l-2 border-[#297fca]">
           <div className="text-2xl uppercase font-bold">{item?.title}</div>
-          <div className="pt-4 pb-0">
+          <div className="pt-4 pb-0 flex flex-col">
             {item?.links?.map((link: ILink) => (
-              <div key={link._key} className="pt-2">
+              <a key={link._key} className="pt-2 hover:underline" href="">
                 {link.title}
-              </div>
+              </a>
             ))}
           </div>
         </div>

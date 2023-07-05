@@ -27,7 +27,6 @@ const MobileMenu = ({ items }: Props) => {
             >
               <div className="flex justify-between items-center py-4 px-8 relative">
                 <p>{item.title}</p>
-
                 <div
                   className={`${
                     openItems[item.title] && "toggle-mobile-card"
@@ -38,7 +37,6 @@ const MobileMenu = ({ items }: Props) => {
                 ></div>
               </div>
             </div>
-
             <div
               className={`relative mx-8 max-h-0 overflow-hidden ${
                 openItems[item.title] && "max-h-full"

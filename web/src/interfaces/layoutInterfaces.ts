@@ -33,6 +33,7 @@ export interface ILink {
 export interface IAsset {
   _type: string;
   alt: string;
+  caption?: string;
   asset: ImageAsset;
 }
 

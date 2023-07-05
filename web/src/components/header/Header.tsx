@@ -14,6 +14,7 @@ function Header({ layout, logo }: Props) {
   const [open, setOpen] = useState<boolean>(false);
   const [openItems, setOpenItems] = useState<{ [key: string]: boolean }>({});
   const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
   const { headerNavigation } = layout;
   const handleHamburgerMenu = () => {
@@ -27,10 +28,18 @@ function Header({ layout, logo }: Props) {
     }));
   };
 
+  const calculateTopValue = () => {
+    const navbarHeight = navRef?.current?.offsetHeight;
+    return navbarHeight || 0;
+  };
+
   return (
-    <header className="relative">
-      <div className="bg-white shadow-md absolute z-10 w-full lg:h-32">
-        <div className="grid grid-cols-[2fr,1fr] gap-4 justify-between items-center md:py-4 px-8 md:px-16">
+    <header className="relative z-50">
+      <>
+        <div
+          ref={navRef}
+          className=" shadow-md grid grid-cols-[2fr,1fr] gap-4 justify-between items-center py-4 px-8 md:px-16"
+        >
           <div className="w-full">
             <Image
               src={`${logo?.asset.asset.url}`}
@@ -38,7 +47,7 @@ function Header({ layout, logo }: Props) {
               width={100}
               height={20}
               priority
-              className="cursor-pointer xl:ml-40"
+              className="cursor-pointer xl:ml-40 w-24"
             />
           </div>
           <div className="flex items-center gap-4 justify-end">
@@ -75,8 +84,7 @@ function Header({ layout, logo }: Props) {
             </div>
           </div>
         </div>
-
-        <div className="bg-[#021d49] hidden md:block relative">
+        <div className="bg-[#021d49] hidden md:block relative lg:scale-100">
           <Container className="">
             <ul className="flex gap-16 py-4 items-center text-white">
               {headerNavigation?.map((item, i) => (
@@ -111,12 +119,11 @@ function Header({ layout, logo }: Props) {
             </ul>
           </Container>
         </div>
-      </div>
+      </>
 
       <div
-        className={`${
-          open ? "top-24" : "top-[-490px]"
-        } md:hidden z-0 absolute w-full transition-all duration-700 ease-in-out`}
+        style={{ top: open ? `${calculateTopValue()}px` : "-490px" }}
+        className="md:hidden z-10 absolute w-full transition-all duration-700 ease-in-out"
       >
         <MobileMenu items={headerNavigation} />
       </div>

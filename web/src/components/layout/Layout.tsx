@@ -7,20 +7,20 @@ import Header from "../header/Header";
 interface Props
   extends PropsWithChildren<{
     config: ILayoutConfig;
-    logo: any;
+    landingage?: any;
   }> {}
 
-function Layout({ children, config, logo }: Props) {
+function Layout({ children, config }: Props) {
   return (
-    <div>
+    <div className="font-sans">
       <Head>
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width, viewport-fit=cover"
         />
       </Head>
-      <Header logo={logo} layout={config} />
-      <main className="relative md:min-h-[40vh]" id="main">
+      <Header logo={config.logo} layout={config} />
+      <main className="relative md:min-h-[40vh] z-1" id="main">
         {children}
       </main>
       <Footer />

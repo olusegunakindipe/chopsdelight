@@ -5,6 +5,8 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta content="width=device-width, initial-scale=1" name="viewport" />
+
           {/* Add meta tags, external stylesheets, and other customizations */}
         </Head>
         <body>
