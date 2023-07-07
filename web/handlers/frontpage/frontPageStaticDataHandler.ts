@@ -19,7 +19,6 @@ export class FrontPageStaticDataHandlers {
     } catch (err) {
       console.log("err", err);
     }
-    console.log("aws", frontPageStaticProps);
     return frontPageStaticProps;
   }
 }

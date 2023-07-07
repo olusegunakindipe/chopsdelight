@@ -12,10 +12,14 @@ interface Props {
   config: ILayoutConfig;
 }
 export default function Index({ frontpage, config }: Props) {
-  const { banner } = frontpage;
+  const {
+    banner,
+    recipe: { content },
+  } = frontpage;
+  console.log("recipe", content);
   return (
     <Layout config={config}>
-      <div className="relative lg:pb-[40%] pb-[100%]">
+      <div className="relative lg:pb-[36%] pb-[100%]">
         <Image
           src={`${banner?.image.asset.asset.url}`}
           alt="heroImage"
@@ -37,7 +41,32 @@ export default function Index({ frontpage, config }: Props) {
           </div>
         </Container>
       </div>
-      <div>124</div>
+      <Container className="">
+        {content.map((item, index) => (
+          <div
+            key={item._key}
+            className={`grid first-of-type:shadow-xl rounded-md py-4  ${
+              index === 0
+                ? "grid-col-1 gap-y-4 mb-4"
+                : "grid-cols-2 gap-4 justify-items-center pb-0"
+            }`}
+          >
+            <Image
+              src={`${item?.image.asset.asset.url}`}
+              alt=""
+              width={500}
+              height={100}
+              className={`${
+                index === 0 ? "w-full" : "w-5/6 h-4/5"
+              } h-full object-cover rounded-2xl`}
+            />
+
+            <p className={`py-2 px-2 text-2xl ${index === 0 && "text-center"}`}>
+              {item.description}
+            </p>
+          </div>
+        ))}
+      </Container>
     </Layout>
   );
 }
