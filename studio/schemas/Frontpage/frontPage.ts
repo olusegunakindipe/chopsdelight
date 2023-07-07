@@ -13,7 +13,12 @@ const schema = {
       name: 'content',
       title: 'Front page sections',
       type: 'array',
-      of: [{type: 'landingPageBanner'}],
+      of: [
+        {type: 'landingPageBanner'},
+        {
+          type: 'frontPageTastyRecipe',
+        },
+      ],
       validation: (Rule: any) => Rule.optional(),
     },
   ],
