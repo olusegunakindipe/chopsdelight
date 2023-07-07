@@ -48,7 +48,7 @@ export default function Index({ frontpage, config }: Props) {
             className={`grid first-of-type:shadow-xl rounded-md py-4  ${
               index === 0
                 ? "grid-col-1 gap-y-4 mb-4"
-                : "grid-cols-2 gap-4 justify-items-center pb-0"
+                : "grid-cols-2 gap-4 items-center justify-items-center pb-0"
             }`}
           >
             <Image
