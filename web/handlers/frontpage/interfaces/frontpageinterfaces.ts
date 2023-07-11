@@ -2,8 +2,9 @@ import { IAsset, ILink } from "@/interfaces/layoutInterfaces";
 
 export interface IFrontpage {
   banner: IBanner;
-  recipe: IRecipe;
-  occasion?: IOccassion;
+  recipe: IContents;
+  occasion?: IContents;
+  pastry?: IPastry;
   title: string;
 }
 
@@ -12,11 +13,12 @@ export interface IBanner {
   _type?: string;
 }
 
-export interface IRecipe {
+export interface IContents {
   content: IContent[];
 }
 
-export interface IOccassion {
+export interface IPastry {
+  header?: string;
   content: IContent[];
 }
 

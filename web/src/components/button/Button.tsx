@@ -10,7 +10,7 @@ interface Props extends PropsWithChildren {
 }
 
 const Button = ({ type, className, children, href }: Props) => {
-  const buttonClasses = `p-2 cursor-pointer ${
+  const buttonClasses = `px-4 py-2 cursor-pointer ${
     type === "primary"
       ? "bg-[#297fca] text-white text-lg"
       : type === "secondary"

@@ -16,15 +16,16 @@ export default function Index({ frontpage, config }: Props) {
   const {
     banner,
     occasion,
+    pastry,
     recipe: { content },
   } = frontpage;
   let [firstItem, ...restItems] = content;
-
+  console.log("pastry", pastry);
   return (
     <Layout config={config}>
       <div className="relative h-96 md:h-[508px] w-full">
         <Image
-          src={`${banner?.image.asset.asset.url}`}
+          src={`${banner.image.asset.asset.url}`}
           alt="heroImage"
           fill
           className=" w-full  xl:h-3/4 object-cover opacity-100"
@@ -72,13 +73,13 @@ export default function Index({ frontpage, config }: Props) {
             >
               <Image
                 src={`${item?.image.asset.asset.url}`}
-                alt=""
+                alt="image"
                 width={500}
                 height={100}
                 className="h-4/5 object-cover rounded-2xl w-5/6 "
               />
 
-              <h6 className="py-2 text-2xl">{item.description}</h6>
+              <h6 className="py-2 text-base md:text-xl">{item.description}</h6>
             </Link>
           ))}
         </div>
@@ -117,6 +118,81 @@ export default function Index({ frontpage, config }: Props) {
           ))}
         </Container>
       </div>
+      <Container className="grid grid-cols-1 py-12 px-4">
+        <h4 className="mx-auto pb-4 md:text-3xl">{pastry?.header}</h4>
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-6">
+          {pastry?.content.map((data) => (
+            <div key={data._key} className="py-4 md:py-8 text-center">
+              <Image
+                src={`${data?.image.asset.asset.url}`}
+                alt=""
+                width={255}
+                height={150}
+                className="w-4/5 rounded-3xl rotate-6 h-16 py-2 md:py-4 md:h-24 object-cover mx-auto flex"
+              />
+              <div className="p-4 md:py-8 text-sm md:text-base">
+                {data.description}
+              </div>
+              <Button
+                href="/"
+                type="primary"
+                className="text-sm md:text-base rounded-full my-4 relative pr-8"
+              >
+                {data.cta?.title}
+                <svg
+                  className="absolute top-2 right-2"
+                  height="24"
+                  width="24"
+                  viewBox="0 0 256 256"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h256v256H0z"></path>
+                  <path
+                    d="M184 184H69.8L41.9 30.6a8 8 0 0 0-7.8-6.6H16"
+                    fill="none"
+                    stroke="#ffffff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="16"
+                    className="stroke-000000"
+                  ></path>
+                  <circle
+                    cx="80"
+                    cy="204"
+                    fill="none"
+                    r="20"
+                    stroke="#ffffff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="16"
+                    className="stroke-000000"
+                  ></circle>
+                  <circle
+                    cx="184"
+                    cy="204"
+                    fill="none"
+                    r="20"
+                    stroke="#ffffff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="16"
+                    className="stroke-000000"
+                  ></circle>
+                  <path
+                    d="M62.5 144h125.6a15.9 15.9 0 0 0 15.7-13.1L216 64H48"
+                    fill="none"
+                    stroke="#ffffff"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="16"
+                    className="stroke-000000"
+                  ></path>
+                </svg>
+              </Button>
+            </div>
+          ))}
+        </div>
+      </Container>
     </Layout>
   );
 }
