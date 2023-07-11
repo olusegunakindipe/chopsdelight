@@ -10,9 +10,11 @@ import landingpageItems from './Landingpage/landingPageItems'
 import link from './objects/link'
 import tastyRecipe from './Frontpage/objects/tastyRecipe'
 import occasionalRecipe from './Frontpage/objects/occasionalRecipe'
+import pastrySheet from './Frontpage/objects/pastrySheet'
 
 import frontPageTastyRecipe from './Frontpage/frontPageTastyRecipe'
 import frontPageOccasionalRecipe from './Frontpage/frontPageOccasionalRecipe'
+import frontPagePastrySheet from './Frontpage/frontPagePastrySheet'
 
 export default [
   siteConfig,
@@ -27,4 +29,6 @@ export default [
   occasionalRecipe,
   frontPageTastyRecipe,
   frontPageOccasionalRecipe,
+  pastrySheet,
+  frontPagePastrySheet,
 ]
