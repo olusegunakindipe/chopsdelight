@@ -18,6 +18,9 @@ const schema = {
         {
           type: 'frontPageTastyRecipe',
         },
+        {
+          type: 'frontPageOccasionalRecipe',
+        },
       ],
       validation: (Rule: any) => Rule.optional(),
     },

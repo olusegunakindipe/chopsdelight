@@ -5,7 +5,7 @@ const schema = {
   fields: [
     {
       name: 'title',
-      title: 'title',
+      title: 'Title',
       type: 'string',
     },
     {
