@@ -92,7 +92,7 @@ function Header({ layout, logo }: Props) {
                   <li
                     key={i}
                     className="flex items-center gap-2 cursor-pointer"
-                    onClick={() => handleNavMenu(item.title)}
+                    onMouseEnter={() => handleNavMenu(item.title)}
                   >
                     <div className="w-full whitespace-nowrap hover:underline">
                       {item.title}

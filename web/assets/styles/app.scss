@@ -8,9 +8,6 @@
   .toggle-menu-button {
     @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent;
   }
-  //   .toggle-mobile-card {
-  //     @apply [&>div::after]:translate-y-0 [&>div::after]:-rotate-45;
-  //   }
 }
 
 * {
@@ -30,5 +27,13 @@ body {
   &::after {
     transform: translate(10%, -40%) rotate(-90deg) !important;
     background-color: transparent !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .dishes {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-areas: "area b" "area c";
   }
 }

@@ -30,7 +30,26 @@ export class FrontPageQueries {
           },
         description
         },
-        }
+        },
+        "occasion": content[_type == "frontPageOccasionalRecipe"][0]{
+          content[]{
+            image{
+            alt,
+            caption,
+            asset{
+              asset->{
+                url
+              },
+            }
+            },
+            header,
+            description,
+            cta{
+              title, externalLink
+            }
+        
+          }
+          }
       }
       `;
     return SanityClient.fetch(query);
