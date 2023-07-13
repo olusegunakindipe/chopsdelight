@@ -15,6 +15,7 @@ import pastrySheet from './Frontpage/objects/pastrySheet'
 import frontPageTastyRecipe from './Frontpage/frontPageTastyRecipe'
 import frontPageOccasionalRecipe from './Frontpage/frontPageOccasionalRecipe'
 import frontPagePastrySheet from './Frontpage/frontPagePastrySheet'
+import frontPagePastryInspiration from './Frontpage/frontPagePastryInspiration'
 
 export default [
   siteConfig,
@@ -31,4 +32,5 @@ export default [
   frontPageOccasionalRecipe,
   pastrySheet,
   frontPagePastrySheet,
+  frontPagePastryInspiration,
 ]

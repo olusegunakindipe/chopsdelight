@@ -24,6 +24,9 @@ const schema = {
         {
           type: 'frontPagePastrySheet',
         },
+        {
+          type: 'frontPagePastryInspiration',
+        },
       ],
       validation: (Rule: any) => Rule.optional(),
     },
