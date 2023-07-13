@@ -7,7 +7,6 @@ interface Props {
   config: ILayoutConfig;
 }
 function Product({ landingpage, config }: Props) {
-  console.log("config", config);
   return (
     <Layout config={config}>
       <div className="bg-black">123</div>

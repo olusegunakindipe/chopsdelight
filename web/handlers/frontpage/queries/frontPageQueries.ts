@@ -83,6 +83,21 @@ export class FrontPageQueries {
                 title, externalLink
               }
             }
+            },
+            "inspiration": content[_type == "frontPagePastryInspiration"][0]{
+              header,
+              description,
+                cta{
+                title, externalLink
+                },
+              images[]{
+                asset{
+                asset->{
+                  url
+                }
+                }
+              },
+            
             }
       }
       `;

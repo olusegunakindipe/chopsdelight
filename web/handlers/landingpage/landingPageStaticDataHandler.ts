@@ -17,7 +17,6 @@ export class LandingPageStaticDataHanlder {
       configResult = getLayoutConfigResult;
       landingpageStaticProps.landingpage = landingpageResult;
       landingpageStaticProps.config = configResult;
-      console.log("landingpageResult", landingpageResult);
     } catch (error) {
       console.log("error", error);
     }

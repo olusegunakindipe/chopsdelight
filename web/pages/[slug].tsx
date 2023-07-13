@@ -34,14 +34,12 @@ export async function getStaticProps({
   const slug = Array.isArray(params?.slug)
     ? params?.slug[0]
     : params?.slug ?? "";
-  console.log("sluga", slug);
   if (!slug) {
     return {
       notFound: true,
     };
   }
   const data = await LandingPageStaticDataHanlder.GetStaticProps(slug);
-  console.log("qaq", data);
   return {
     props: {
       ...data,
