@@ -7,8 +7,8 @@ import {
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
-import Recipe from "/blocks/recipe/Recipe";
-import Product from "/blocks/product/Product";
+import Recipe from "src/blocks/recipe/Recipe";
+import Product from "src/blocks/product/Product";
 
 interface Props {
   landingpage?: ILandingPage[];

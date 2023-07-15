@@ -51,6 +51,7 @@ export default function Index({ frontpage, config }: Props) {
             href=""
             key={item._key}
             className="md:-mt-20 z-50 grid shadow-2xl rounded-md py-4 grid-col-1 gap-y-4 mb-4"
+            passHref
           >
             <Image
               src={`${item?.image.asset.asset.url}`}
@@ -72,6 +73,7 @@ export default function Index({ frontpage, config }: Props) {
               href=""
               key={item._key}
               className={`grid rounded-md py-4 grid-cols-2  items-center justify-items-center pb-0`}
+              passHref
             >
               <Image
                 src={`${item?.image.asset.asset.url}`}
@@ -203,7 +205,7 @@ export default function Index({ frontpage, config }: Props) {
           <p className="text-sm py-4 text-center">{inspiration?.description}</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3 md:gap-x-2 md:px-2 py-4">
             {inspiration?.images?.map((item, i) => (
-              <Link href="" key={i} className="">
+              <Link href="" key={i} className="" passHref>
                 <Image
                   src={`${item.asset.asset.url}`}
                   alt=""

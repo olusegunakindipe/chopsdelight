@@ -14,7 +14,7 @@ function Footer({ footer }: Props) {
       <Container className="flex flex-col md:flex-row md:justify-center items-center gap-4 py-8 px-2 md:my-8">
         <h3 className="md:text-4xl md:pr-4 capitalize">Let&#39;s be social </h3>
         <div className="flex gap-4">
-          <Link href="https://facebook.com">
+          <Link href="https://facebook.com" passHref>
             <svg
               height="32"
               width="32"
@@ -42,7 +42,7 @@ function Footer({ footer }: Props) {
               </g>
             </svg>
           </Link>
-          <Link href="https://instgram.com">
+          <Link href="https://instgram.com" passHref>
             <svg
               height="32"
               style={{ enableBackground: "new 0 0 512 512" } as any}
@@ -77,7 +77,7 @@ function Footer({ footer }: Props) {
               <g id="Layer_1" />
             </svg>
           </Link>
-          <Link href="https://twitter.com">
+          <Link href="https://twitter.com" passHref>
             <svg
               height="32px"
               id="Layer_1"
@@ -110,7 +110,7 @@ function Footer({ footer }: Props) {
               <g />
             </svg>
           </Link>
-          <Link href="https://www.pinterest.co.uk">
+          <Link href="https://www.pinterest.co.uk" passHref>
             <svg
               height="32"
               style={{
@@ -138,7 +138,7 @@ function Footer({ footer }: Props) {
               </g>
             </svg>
           </Link>
-          <Link href="https://youtube.com">
+          <Link href="https://youtube.com" passHref>
             <svg
               height="36"
               id="Layer_1"
@@ -185,7 +185,7 @@ function Footer({ footer }: Props) {
         </Container>
       </div>
       <Container className="flex flex-col md:flex-row md:justify-between items-center gap-4 py-4">
-        <Link href="/">
+        <Link href="/" passHref>
           <Image
             src={logo}
             alt="logo"

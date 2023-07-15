@@ -1,4 +1,4 @@
-import { IMenuItem } from "@/interfaces/layoutInterfaces";
+import { IMenuItem } from "src/interfaces/layoutInterfaces";
 
 export interface ILandingPage {
   title: string;

@@ -1,4 +1,4 @@
-import { ILandinpage, ILink } from "@/interfaces/layoutInterfaces";
+import { ILandinpage, ILink } from "src/interfaces/layoutInterfaces";
 import React from "react";
 
 interface Props {

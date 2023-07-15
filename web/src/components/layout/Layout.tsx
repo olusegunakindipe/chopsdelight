@@ -14,12 +14,6 @@ function Layout({ children, config }: Props) {
   const { footer } = config;
   return (
     <div className="font-sans">
-      <Head>
-        <meta
-          name="viewport"
-          content="initial-scale=1.0, width=device-width, viewport-fit=cover"
-        />
-      </Head>
       <Header logo={config.logo} layout={config} />
       <main className="relative md:min-h-[40vh] z-1" id="main">
         {children}
