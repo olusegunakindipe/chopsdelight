@@ -1,4 +1,4 @@
-import { IHeaderNavigation } from "@/interfaces/layoutInterfaces";
+import { IHeaderNavigation } from "/interfaces/layoutInterfaces";
 import React, { useRef, useState } from "react";
 import DynmaicMobileMenu from "./DynamicMenu";
 
@@ -18,8 +18,8 @@ const MobileMenu = ({ items }: Props) => {
   return (
     <ul className="min-h-[200px]">
       {items?.map((item, i) => (
-        <>
-          <li id={item.title} key={i} className="bg-white">
+        <React.Fragment key={i}>
+          <li id={item.title} className="bg-white">
             <div
               ref={ref}
               onClick={() => handleToggle(item.title)}
@@ -37,6 +37,7 @@ const MobileMenu = ({ items }: Props) => {
                 ></div>
               </div>
             </div>
+
             <div
               className={`relative mx-8 max-h-0 overflow-hidden ${
                 openItems[item.title] && "max-h-full"
@@ -46,7 +47,7 @@ const MobileMenu = ({ items }: Props) => {
             </div>
           </li>
           <hr className=" border-0 bg-gray-400 w-11/12 mx-auto h-0.5 last-of-type:invisible" />
-        </>
+        </React.Fragment>
       ))}
     </ul>
   );

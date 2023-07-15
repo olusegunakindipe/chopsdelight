@@ -1,11 +1,11 @@
-import { ILayoutConfig } from "@/interfaces/layoutInterfaces";
+import { ILayoutConfig } from "/interfaces/layoutInterfaces";
 import { FrontPageStaticDataHandlers } from "handlers/frontpage/frontPageStaticDataHandler";
 import { IFrontpage } from "handlers/frontpage/interfaces/frontpageinterfaces";
 import { GetStaticProps, GetStaticPropsResult } from "next";
 import Layout from "src/components/layout/Layout";
 import Image from "next/image";
-import Button from "@/components/button/Button";
-import Container from "@/components/container/Container";
+import Button from "src/components/button/Button";
+import Container from "src/components/container/Container";
 import Link from "next/link";
 
 interface Props {
@@ -57,6 +57,7 @@ export default function Index({ frontpage, config }: Props) {
               alt=""
               width={600}
               height={100}
+              priority
               className="w-full h-full object-cover"
             />
 
@@ -91,13 +92,15 @@ export default function Index({ frontpage, config }: Props) {
             <div
               className={`${
                 index % 2 == 1 && "md:flex md:flex-row-reverse"
-              }  gap-4 md:gap-0 flex-col md:flex-row flex mx-auto md:h-96`}
+              } relative gap-4 md:gap-0 flex-col md:flex-row flex mx-auto md:h-96`}
               key={item._key}
             >
               <Image
                 src={`${item.image.asset.asset.url}`}
                 alt="image"
                 fill
+                priority
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="!static h-full object-cover md:!w-1/2"
               />
               <div className="text-center  flex flex-col justify-center items-center py-8 md:py-12 md:!w-1/2">

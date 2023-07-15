@@ -1,10 +1,11 @@
 import React, { useState, useRef } from "react";
 import Image from "next/image";
-import { IAsset, ILayoutConfig } from "@/interfaces/layoutInterfaces";
+import { IAsset, ILayoutConfig } from "/interfaces/layoutInterfaces";
 import MobileMenu from "./MobileMenu";
 import Container from "../container/Container";
 import DynamicMenu from "./DynamicMenu";
 import Modal from "../modal/Modal";
+import { isNullOrEmptyObject } from "src/helpers/genericHelpers";
 
 interface Props {
   logo?: IAsset;
@@ -32,7 +33,6 @@ function Header({ layout, logo }: Props) {
     const navbarHeight = navRef?.current?.offsetHeight;
     return navbarHeight || 0;
   };
-
   return (
     <header className="relative z-50">
       <>
@@ -88,9 +88,8 @@ function Header({ layout, logo }: Props) {
           <Container className="">
             <ul className="flex gap-16 py-4 items-center text-white">
               {headerNavigation?.map((item, i) => (
-                <>
+                <React.Fragment key={i}>
                   <li
-                    key={i}
                     className="flex items-center gap-2 cursor-pointer"
                     onMouseEnter={() => handleNavMenu(item.title)}
                   >
@@ -107,14 +106,15 @@ function Header({ layout, logo }: Props) {
                       ></div>
                     )}
                   </li>
-                  {openItems[item.title] && (
-                    <Modal onClose={() => handleNavMenu(item.title)}>
-                      <div className="text-black">
-                        <DynamicMenu data={item.landingpage} />
-                      </div>
-                    </Modal>
-                  )}
-                </>
+                  {openItems[item.title] &&
+                    !isNullOrEmptyObject(item.landingpage?.menuItems) && (
+                      <Modal onClose={() => handleNavMenu(item.title)}>
+                        <div className="text-black">
+                          <DynamicMenu data={item.landingpage} />
+                        </div>
+                      </Modal>
+                    )}
+                </React.Fragment>
               ))}
             </ul>
           </Container>

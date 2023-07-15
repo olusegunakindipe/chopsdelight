@@ -1,4 +1,4 @@
-import { IAsset, ILink } from "@/interfaces/layoutInterfaces";
+import { IAsset, ILink } from "/interfaces/layoutInterfaces";
 
 export interface IFrontpage {
   banner: IBanner;

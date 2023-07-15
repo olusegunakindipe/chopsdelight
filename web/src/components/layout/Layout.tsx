@@ -1,4 +1,4 @@
-import { IAsset, ILayoutConfig } from "@/interfaces/layoutInterfaces";
+import { IAsset, ILayoutConfig } from "/interfaces/layoutInterfaces";
 import Head from "next/head";
 import React, { PropsWithChildren } from "react";
 import Footer from "../footer/Footer";
@@ -11,6 +11,7 @@ interface Props
   }> {}
 
 function Layout({ children, config }: Props) {
+  const { footer } = config;
   return (
     <div className="font-sans">
       <Head>
@@ -23,7 +24,7 @@ function Layout({ children, config }: Props) {
       <main className="relative md:min-h-[40vh] z-1" id="main">
         {children}
       </main>
-      <Footer />
+      <Footer footer={footer} />
     </div>
   );
 }

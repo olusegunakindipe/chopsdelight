@@ -1,5 +1,5 @@
 import React, { ComponentType } from "react";
-import "../assets/styles/app.scss";
+import "assets/styles/app.scss";
 interface Props {
   Component: ComponentType;
   pageProps: any;

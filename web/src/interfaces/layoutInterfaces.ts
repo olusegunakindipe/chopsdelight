@@ -2,7 +2,7 @@ export interface ILayoutConfig {
   title: string;
   logo: IAsset;
   headerNavigation?: IHeaderNavigation[];
-  footerNavigation?: IFooterNavigation;
+  footer: IFooter[];
   footerLogo?: IAsset;
   activeMenuItem?: string;
 }
@@ -12,7 +12,11 @@ export interface IHeaderNavigation {
   landingpage?: ILandinpage;
 }
 
-export interface IFooterNavigation {}
+export interface IFooter {
+  title: string;
+  _key: string;
+  link: ILink[];
+}
 
 export interface ILandinpage {
   menuItems: IMenuItem[];

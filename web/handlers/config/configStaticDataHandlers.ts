@@ -24,6 +24,14 @@ export class ConfigStaticDataHandlers {
                     url
                 }
             }
+        },
+        footer[]{
+          title,
+          _key,
+          link[]{
+            title,
+            externalLink
+          }
         }
     
     }`;

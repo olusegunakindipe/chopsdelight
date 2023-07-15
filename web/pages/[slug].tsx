@@ -1,5 +1,5 @@
 import React from "react";
-import { ILayoutConfig } from "@/interfaces/layoutInterfaces";
+import { ILayoutConfig } from "/interfaces/layoutInterfaces";
 import { ILandingPage } from "handlers/landingpage/interfaces/landingPageInterfaces";
 import { LandingPageStaticDataHanlder } from "handlers/landingpage/landingPageStaticDataHandler";
 import {
@@ -7,8 +7,8 @@ import {
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
-import Recipe from "@/blocks/recipe/Recipe";
-import Product from "@/blocks/product/Product";
+import Recipe from "/blocks/recipe/Recipe";
+import Product from "/blocks/product/Product";
 
 interface Props {
   landingpage?: ILandingPage[];
