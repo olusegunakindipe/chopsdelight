@@ -31,6 +31,12 @@ const schema = {
       type: 'array',
       of: [{type: 'landingpageItems'}],
     },
+    {
+      title: 'Footer',
+      name: 'footer',
+      type: 'array',
+      of: [{type: 'footer'}],
+    },
   ],
 }
 

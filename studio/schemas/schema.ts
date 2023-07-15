@@ -6,6 +6,7 @@ import imageAsset from './objects/imageAsset'
 import landingPageBanner from './Landingpage/landingPageBanner'
 import landingpage from './Landingpage/landingpage'
 import landingpageItems from './Landingpage/landingPageItems'
+import footer from './Footer/footer'
 
 import link from './objects/link'
 import tastyRecipe from './Frontpage/objects/tastyRecipe'
@@ -33,4 +34,5 @@ export default [
   pastrySheet,
   frontPagePastrySheet,
   frontPagePastryInspiration,
+  footer,
 ]
