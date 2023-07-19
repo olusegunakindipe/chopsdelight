@@ -25,5 +25,5 @@ jobs:
       - name: Install dependencies
         run: |
           cd web
-          npm i
+          npm i --force
           npm run build
