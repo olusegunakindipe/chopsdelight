@@ -1,4 +1,4 @@
-name: Intergration
+name: Integration
 
 on:
   push:
@@ -22,5 +22,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm i
-      - run: npm run build
+      - name: Install dependencies
+        run: |
+          cd web
+          npm i
+          npm run build
